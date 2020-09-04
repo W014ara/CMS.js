@@ -115,6 +115,13 @@ export class CMS {
                 toggleClass(menu_title, burger);
                 toggleClass(menu_title, content);
                 hoverClass(menu_title, menu_title);
+                menu_title.addEventListener('click', function(e){
+                    let contentHasActive = content.className.split(' ').includes('active');
+                    if(contentHasActive){
+                        let newHeight = content.childElementCount * 112 + 'px';
+                        content.style.height = newHeight;
+                    }else content.style.height = '100%';
+                })
             }
         }catch(exception){
             console.log(exception);

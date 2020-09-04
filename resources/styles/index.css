@@ -130,7 +130,7 @@
 .leftPage .content {
   position: absolute;
   width: inherit;
-  height: 0;
+  height: inherit;
   top: 17.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -146,10 +146,6 @@
 
 .leftPage .content .content-child {
   opacity: 0;
-}
-
-.leftPage .content.active {
-  height: inherit;
 }
 
 .leftPage .content.active .content-child {
@@ -204,7 +200,7 @@
   margin-left: 30rem;
   width: 4rem;
   height: 4rem;
-  background-image: url("http://127.0.0.1:5500/resources/imgs/system/menu-bar/arrow-left.svg");
+  background-image: url("../imgs/system/menu-bar/arrow-left.svg");
   background-size: cover;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
@@ -215,7 +211,7 @@
   margin-left: 30rem;
   width: 4rem;
   height: 4rem;
-  background-image: url("http://127.0.0.1:5500/resources/imgs/system/menu-bar/arrow-down.svg");
+  background-image: url("../imgs/system/menu-bar/arrow-down.svg");
   background-size: cover;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;

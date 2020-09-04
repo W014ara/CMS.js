@@ -141,7 +141,7 @@ $content_fontFamily: Comfortaa;
     .content{
         position: absolute;
         width: inherit;
-        height: 0;
+        height: inherit;
         top:17.5rem;
         display: flex;
         flex-direction: column;
@@ -153,7 +153,6 @@ $content_fontFamily: Comfortaa;
         }
 
         &.active{
-            height: inherit;
             .content-child{
                 opacity: 100%;
                 display: flex;
@@ -195,7 +194,7 @@ $content_fontFamily: Comfortaa;
                     margin-left:30rem;
                     width: 4rem;
                     height: 4rem;
-                    background-image: url('http://127.0.0.1:5500/resources/imgs/system/menu-bar/arrow-left.svg');
+                    background-image: url('../imgs/system/menu-bar/arrow-left.svg');
                     background-size: cover;
                     transition: 0.1s ease-in-out;
                 }
@@ -206,7 +205,7 @@ $content_fontFamily: Comfortaa;
                         margin-left:30rem;
                         width: 4rem;
                         height: 4rem;
-                        background-image: url('http://127.0.0.1:5500/resources/imgs/system/menu-bar/arrow-down.svg');
+                        background-image: url('../imgs/system/menu-bar/arrow-down.svg');
                         background-size: cover;
                         transition: 0.1s ease-in-out;
                     }
