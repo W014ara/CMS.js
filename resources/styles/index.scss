@@ -1,0 +1,269 @@
+/*
+    Style Params for Display;
+*/
+$sd: 576px;
+$md: 768px;
+$ld: 992px;
+$el: 1200px;
+
+/*
+    Style Params for User info;
+*/
+$user_dataFont: Consolas;
+$user_img: '../imgs/system/user_default.svg';
+
+/*
+    Style Params for Left Side
+*/
+
+$left_panelHoverColor: rgba(179, 10, 127, 0.7);
+$left_panelContentColor: rgba(131, 131, 131, 0.76);
+$content_background: rgba(29, 29, 29, 0.596);
+$content_bakcground_hover: rgba(179, 10, 127, 0.7);
+$content_fontColor: white;
+$burgerMenu_fontFamily: Comfortaa;
+$content_fontFamily: Comfortaa;
+
+
+/*
+    Reset options
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.leftPage{
+    display: flex;
+    flex-direction: column;
+
+    .user{
+        width: inherit;
+        height: 10.5rem;
+        box-sizing: border-box;
+        background-color: rgba(43, 42, 42, 0.7);
+    
+        .user-photo{
+            width: 8.6rem;
+            height: 8.6rem;
+            margin-top: 0.5rem;
+            margin-left: 1.2rem;
+            background-image: url($user_img);
+            background-size: cover;
+    
+            .mark{
+                position: absolute;
+                margin-left: 6.5rem;
+                margin-top: 5.8rem;
+                width: 2.5rem;
+                height: 2.5rem;
+                background-image: url('../imgs/system/user_marker.svg');
+                background-size: cover;
+            }
+        }
+    
+        .user-data{
+            position: absolute;
+            top: 2rem;
+            margin-left: 11rem;
+            width: 22rem;
+            height: 4.5rem;
+    
+            li{
+                margin-top: 0.2rem;
+                margin-left: 0.2rem;
+                list-style-type: none;
+                font-family: $user_dataFont;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 1.3rem;
+                line-height: 2rem;
+                color: #FFFFFF;
+    
+                &:hover{
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .menu-title{
+        box-sizing: border-box;
+        width: inherit;
+        height: 7rem;
+        background-color: rgba(131, 131, 131, 0.76);
+        transition: 0.25s ease-in-out;
+
+        &.hover{
+            background: $left_panelHoverColor;
+            box-shadow: 0rem 0.2rem 0.2rem rgba(255, 255, 255, 0.25);
+        }
+        
+        .burger{
+            position: relative;
+            top: 2.2rem;
+            margin-left: 2.2rem;
+            font-family: $burgerMenu_fontFamily;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 2rem;
+            line-height: 2.5rem;
+            color: #FFFFFF;
+    
+            &:hover{
+                cursor: default;
+            }
+    
+            &:after{
+                content: "";
+                position: absolute;
+                display: inline-block;
+                margin-left: 0.5rem;
+                top: -0.4rem;
+                width: 2.5rem;
+                height: 2.5rem;
+                background-image: url('../imgs/system/menu-bar/burger.svg');
+                background-size: 2.5rem 2.5rem;
+                transition: 0.2s ease-in-out;
+            }
+    
+            &.active{
+                &:after{
+                    transform: rotate(90deg);
+                }
+            }
+
+        }
+    
+    }
+
+    .content{
+        position: absolute;
+        width: inherit;
+        height: 0;
+        top:17.5rem;
+        display: flex;
+        flex-direction: column;
+        background-color: $left_panelContentColor;
+        transition:0.2s ease-in-out;
+        
+        .content-child{
+            opacity: 0;
+        }
+
+        &.active{
+            height: inherit;
+            .content-child{
+                opacity: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                width: inherit;
+                height: 7rem;
+                background-color: $content_background;
+                transition:0.2s ease-in-out;
+
+                .inner-content{
+                    width: 10rem;
+                    height: 10rem;
+                    background: red;
+                }
+
+                .content-logo{
+                    border:0;
+                    margin-left: 7.5rem;
+                    width: 4.3rem;
+                    height: 4.3rem;
+                }
+                h1{
+                    width: 20rem;
+                    text-overflow: ellipsis;
+                    margin-left: 1.5rem;
+                    margin-top: 0.5rem;
+                    font-family: $content_fontFamily;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 2rem;
+                    line-height: 2rem;
+                    color: $content_fontColor
+                }
+
+                .content-arrow{
+                    position: absolute;
+                    margin-left:30rem;
+                    width: 4rem;
+                    height: 4rem;
+                    background-image: url('http://127.0.0.1:5500/resources/imgs/system/menu-bar/arrow-left.svg');
+                    background-size: cover;
+                    transition: 0.1s ease-in-out;
+                }
+
+                &.active{
+                    .content-arrow{
+                        position: absolute;
+                        margin-left:30rem;
+                        width: 4rem;
+                        height: 4rem;
+                        background-image: url('http://127.0.0.1:5500/resources/imgs/system/menu-bar/arrow-down.svg');
+                        background-size: cover;
+                        transition: 0.1s ease-in-out;
+                    }
+                }
+                
+                &:hover{
+                    cursor: pointer;
+                    background-color: $content_bakcground_hover;
+                }
+            }
+        }
+
+        &.hover{
+            color:$left_panelContentColor;
+        }
+    }
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: $sd) { 
+    html{
+        font-size: 0.2em;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: $md) { 
+    html{
+        font-size: 0.3em;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: $ld) { 
+    html{
+        font-size: 0.4em;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: $el) { 
+    html{
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 3800px) {
+    html {
+        font-size: 2em;
+    }
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+    font-family: "Comfortaa";
+    src: url("../fonts/comfortaaa.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }

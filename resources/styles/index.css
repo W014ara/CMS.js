@@ -1,0 +1,271 @@
+/*
+    Style Params for Display;
+*/
+/*
+    Style Params for User info;
+*/
+/*
+    Style Params for Left Side
+*/
+/*
+    Reset options
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.leftPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.leftPage .user {
+  width: inherit;
+  height: 10.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(43, 42, 42, 0.7);
+}
+
+.leftPage .user .user-photo {
+  width: 8.6rem;
+  height: 8.6rem;
+  margin-top: 0.5rem;
+  margin-left: 1.2rem;
+  background-image: url("../imgs/system/user_default.svg");
+  background-size: cover;
+}
+
+.leftPage .user .user-photo .mark {
+  position: absolute;
+  margin-left: 6.5rem;
+  margin-top: 5.8rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url("../imgs/system/user_marker.svg");
+  background-size: cover;
+}
+
+.leftPage .user .user-data {
+  position: absolute;
+  top: 2rem;
+  margin-left: 11rem;
+  width: 22rem;
+  height: 4.5rem;
+}
+
+.leftPage .user .user-data li {
+  margin-top: 0.2rem;
+  margin-left: 0.2rem;
+  list-style-type: none;
+  font-family: Consolas;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  color: #FFFFFF;
+}
+
+.leftPage .user .user-data li:hover {
+  cursor: default;
+}
+
+.leftPage .menu-title {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: inherit;
+  height: 7rem;
+  background-color: rgba(131, 131, 131, 0.76);
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.leftPage .menu-title.hover {
+  background: rgba(179, 10, 127, 0.7);
+  -webkit-box-shadow: 0rem 0.2rem 0.2rem rgba(255, 255, 255, 0.25);
+          box-shadow: 0rem 0.2rem 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+.leftPage .menu-title .burger {
+  position: relative;
+  top: 2.2rem;
+  margin-left: 2.2rem;
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: #FFFFFF;
+}
+
+.leftPage .menu-title .burger:hover {
+  cursor: default;
+}
+
+.leftPage .menu-title .burger:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  margin-left: 0.5rem;
+  top: -0.4rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url("../imgs/system/menu-bar/burger.svg");
+  background-size: 2.5rem 2.5rem;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.leftPage .menu-title .burger.active:after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.leftPage .content {
+  position: absolute;
+  width: inherit;
+  height: 0;
+  top: 17.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(131, 131, 131, 0.76);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.leftPage .content .content-child {
+  opacity: 0;
+}
+
+.leftPage .content.active {
+  height: inherit;
+}
+
+.leftPage .content.active .content-child {
+  opacity: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: inherit;
+  height: 7rem;
+  background-color: rgba(29, 29, 29, 0.596);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.leftPage .content.active .content-child .inner-content {
+  width: 10rem;
+  height: 10rem;
+  background: red;
+}
+
+.leftPage .content.active .content-child .content-logo {
+  border: 0;
+  margin-left: 7.5rem;
+  width: 4.3rem;
+  height: 4.3rem;
+}
+
+.leftPage .content.active .content-child h1 {
+  width: 20rem;
+  text-overflow: ellipsis;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: white;
+}
+
+.leftPage .content.active .content-child .content-arrow {
+  position: absolute;
+  margin-left: 30rem;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("http://127.0.0.1:5500/resources/imgs/system/menu-bar/arrow-left.svg");
+  background-size: cover;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.leftPage .content.active .content-child.active .content-arrow {
+  position: absolute;
+  margin-left: 30rem;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("http://127.0.0.1:5500/resources/imgs/system/menu-bar/arrow-down.svg");
+  background-size: cover;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.leftPage .content.active .content-child:hover {
+  cursor: pointer;
+  background-color: rgba(179, 10, 127, 0.7);
+}
+
+.leftPage .content.hover {
+  color: rgba(131, 131, 131, 0.76);
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 0.2em;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 0.3em;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 0.4em;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 3800px) {
+  html {
+    font-size: 2em;
+  }
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../fonts/comfortaaa.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+/*# sourceMappingURL=index.css.map */
