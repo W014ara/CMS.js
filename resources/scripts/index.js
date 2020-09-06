@@ -6,6 +6,7 @@ const cms = new CMS();
 cms.initfield();
 cms.addLeftSection();
 cms.addRightSection();
+
 cms.addCategory('http://127.0.0.1:5500/CMS.js/resources/imgs/system/menu-bar/fruits-logo.svg','Фрукты','fruits');
 cms.addCategory('http://127.0.0.1:5500/CMS.js/resources/imgs/system/menu-bar/vegetables-logo.svg','Овощи','vegetables');
 cms.addCategory('http://127.0.0.1:5500/CMS.js/resources/imgs/system/menu-bar/meat-logo.svg','Мясо','meat');

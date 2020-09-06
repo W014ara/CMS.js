@@ -19,7 +19,7 @@
 
 export class CMS {
     /**
-    * Creating the main field of the admin panel
+    * @method initfield Creating the main field of the admin panel
     * @return {void} returning main page's class
     * @property {_defaultColor} default main page's background color
     * @property {_defaultFont} default body font. Notce: Use rem in your
@@ -41,7 +41,7 @@ export class CMS {
     }
     
     /**
-    * Сustomize field styles
+    * @method fieldSetup_background Сustomize field styles
     * @param {color} :String - Sets the background color
     * @return {void} returning main page's class
     */
@@ -55,7 +55,7 @@ export class CMS {
     }
 
     /**
-    * Сustomize field styles
+    * @method fieldSetup_font Сustomize field styles
     * @param {font} :String - Sets the page main font
     * @return {void} returning main page's class
     */
@@ -71,7 +71,7 @@ export class CMS {
 
 
     /**
-    * Add left section panel
+    * @method addLeftSection Add left section panel
     * @return {void} returning left section's class
     * @property {_leftSection_DefaultWidth} default left section's width
     * @property {_leftSection_defaultHeight} default left section's height
@@ -138,7 +138,7 @@ export class CMS {
 
     __rightSection_defaultColor = `#FFF5FC`;
     /**
-     * This method initializing right cms section for tables, log out btn and other
+     * @method addRightSection This method initializing right cms section for tables, log out btn and other
      * @returns{} Void
      */
     addRightSection(){
@@ -165,7 +165,7 @@ export class CMS {
     }
 
     /**
-    * Change style for user Panel. Current - background
+    * @method user_SetBackground Change style for user Panel. Current - background
     * @param {color}: String - Background Color
     * @returns {void}
     */
@@ -180,7 +180,7 @@ export class CMS {
     }
 
     /**
-    * Change style for user Panel. Current - User picture
+    * @method user_SetImg Change style for user Panel. Current - User picture
     * @param {path}: String - path to your IMG
     * @returns {void}
     */
@@ -195,7 +195,7 @@ export class CMS {
     }
 
     /**
-    * Change style for user Panel. Current - User name
+    * @method user_SetName Change style for user Panel. Current - User name
     * @param {name}: String - user name
     * @returns {void}
     */
@@ -210,7 +210,7 @@ export class CMS {
     }
 
     /**
-    * Change style for user Panel. Current - User rule
+    * @method user_SetRule Change style for user Panel. Current - User rule
     * @param {rule}: String - user rule
     * @returns {void}
     */
@@ -225,7 +225,7 @@ export class CMS {
     }
 
     /**
-    * Change style for user Panel. Current - User right corner mark
+    * @method user_SetMark Change style for user Panel. Current - User right corner mark
     * @param {path}: String - path to your new mark
     * @returns {void}
     */
@@ -240,7 +240,7 @@ export class CMS {
     }
 
     /**
-    * This method adds new category into left panel
+    * @method addCategory This method adds new category into left panel
     * @param {img}: String - path to your category image
     * @param {title}: String - category's name
     * @param {identifier}: String - The unique identifier for your item. Warning: don't create the same identifier
@@ -276,7 +276,7 @@ export class CMS {
     }
 
     /**
-    * This method removes existing category from left panel
+    * @method removeCategory This method removes existing category from left panel
     * @param {identifier}: String - The unique identifier for your item.
     * @returns {void}
     */
@@ -290,7 +290,7 @@ export class CMS {
     }
 
     /**
-    * This method sets new img for current category
+    * @method category_setImg This method sets new img for current category
     * @param {identifier}: String - The unique identifier for your item.
     * @param {img}: String - Img path
     * @returns {void}
@@ -306,7 +306,7 @@ export class CMS {
 
 
     /**
-    * This method sets new title for current category
+    * @method category_setTitle This method sets new title for current category
     * @param {identifier}: String - The unique identifier for your item.
     * @param {title}: String - title text
     * @returns {void}
@@ -323,7 +323,7 @@ export class CMS {
 
 //Toggle elem for click event
 /**
- * 
+ * @function toggleClass Jquery realisation toggle class (add active)
  * @param {clickEl} Document Obj: Current click element 
  * @param {changeEL}  Document Obj: Current changable element
  */
@@ -343,7 +343,7 @@ function toggleClass(clickEL, changeEL){
 
 //Toggle elem for hover event
 /**
- * 
+ * @function hoverClass Jquery realisation toggle hover class (add active)
  * @param {clickEl} Document Obj: Current click element 
  * @param {changeEL}  Document Obj: Current changable element
  */
