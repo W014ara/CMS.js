@@ -96,6 +96,9 @@ export class CMS {
                                                     <li>Имя: user32323232_3232</li>
                                                     <li>Должность: Администратор</li>
                                                 </ul>
+                                                <div class='logout-btn'>
+                                                    <p>Выйти из системы</p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='menu-title hover' id='menu-title'>
@@ -115,16 +118,49 @@ export class CMS {
                 toggleClass(menu_title, burger);
                 toggleClass(menu_title, content);
                 hoverClass(menu_title, menu_title);
+                
                 menu_title.addEventListener('click', function(e){
                     let contentHasActive = content.className.split(' ').includes('active');
                     if(contentHasActive){
-                        let newHeight = content.childElementCount * 112 + 'px';
-                        content.style.height = newHeight;
+                        if(content.childElementCount === null || content.childElementCount === undefined) 
+                            content.style.height = '100%';
+                        else{
+                            let newHeight = content.childElementCount * 112 + 'px';
+                            content.style.height = newHeight;
+                        }
                     }else content.style.height = '100%';
                 })
             }
         }catch(exception){
             console.log(exception);
+        }
+    }
+
+    __rightSection_defaultColor = `#FFF5FC`;
+    /**
+     * This method initializing right cms section for tables, log out btn and other
+     * @returns{} Void
+     */
+    addRightSection(){
+        try {
+            const root = document.querySelector('.root');
+            if(document.querySelector('.right-panel')) console.log('Error',
+                                                    'You already have right section');
+            else{
+                const rightField = `<section class='right-panel' id='right-panel'>
+                                        <div class='header' id='right-panel-header'>
+                                            <div class='path-icon' id='path-icon'></div>
+                                            <h1>Дом/</h1>
+                                        </div>
+                                        <div class='container'>
+                                            <div class='container-background'></div>
+                                        </div>
+                                    </section>`;
+                root.insertAdjacentHTML('beforeend', rightField);
+            }
+
+        } catch (error) {
+            console.log('Error', error);
         }
     }
 
@@ -217,12 +253,23 @@ export class CMS {
             const new_block = `<div class='content-child' id='${identifier}' data-id='${identifier}'>
                                    <img src='${img}' class='content-logo'>
                                    <h1>${title}</h1>
-                                   <div src='http://127.0.0.1:5500/resources/imgs/system/menu-bar/arrow-left.svg' class='content-arrow'></div>
+                                   <div class='content-arrow'></div>
                                </div>`
                                
             content.insertAdjacentHTML('beforeend', new_block);
             const contentChild = document.getElementById(identifier);
             toggleClass(contentChild, contentChild);
+            contentChild.addEventListener('click', function(e){
+                try {
+                    for(let elem of this.className.split(' ')){
+                        if(elem === 'active'){
+                            document.querySelector('.right-panel').childNodes[1].childNodes[3].innerHTML = `Дом/${title}`;
+                        }else document.querySelector('.right-panel').childNodes[1].childNodes[3].innerHTML = `Дом/`;
+                    }
+                } catch (error) {
+                    console.log('Error', error);
+                }
+            })
         } catch (error) {
             console.log(error);
         }

@@ -1,7 +1,4 @@
 /*
-    Style Params for Display;
-*/
-/*
     Style Params for User info;
 */
 /*
@@ -13,6 +10,22 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .leftPage {
@@ -76,6 +89,36 @@
   cursor: default;
 }
 
+.leftPage .user .user-data .logout-btn {
+  position: absolute;
+  margin-top: 0.5rem;
+  width: 10rem;
+  height: 2rem;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  border: 0.1rem solid rgba(131, 131, 131, 0.76);
+}
+
+.leftPage .user .user-data .logout-btn:hover {
+  background: red;
+  border: 0.1rem solid red;
+  -webkit-filter: drop-shadow(0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+}
+
+.leftPage .user .user-data .logout-btn p {
+  margin-left: 0.2rem;
+  margin-top: 0.5rem;
+  font-family: Comfortaa;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.leftPage .user .user-data .logout-btn p:hover {
+  cursor: pointer;
+}
+
 .leftPage .menu-title {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -130,7 +173,7 @@
 .leftPage .content {
   position: absolute;
   width: inherit;
-  height: inherit;
+  height: 100%;
   top: 17.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -177,14 +220,14 @@
 
 .leftPage .content.active .content-child .content-logo {
   border: 0;
-  margin-left: 7.5rem;
+  margin-left: 1rem;
   width: 4.3rem;
   height: 4.3rem;
 }
 
 .leftPage .content.active .content-child h1 {
   width: 20rem;
-  text-overflow: ellipsis;
+  text-overflow: clip;
   margin-left: 1.5rem;
   margin-top: 0.5rem;
   font-family: Comfortaa;
@@ -226,6 +269,83 @@
   color: rgba(131, 131, 131, 0.76);
 }
 
+.right-panel {
+  position: absolute;
+  margin-left: 35rem;
+  width: 100%;
+  height: 100%;
+}
+
+.right-panel .container {
+  width: inherit;
+  height: inherit;
+}
+
+.right-panel .container .container-background {
+  opacity: 30%;
+  margin-left: 25%;
+  margin-top: 20rem;
+  width: 60rem;
+  height: 50rem;
+  background: url("../imgs/system/right-panel/logo.svg");
+  background-size: cover;
+}
+
+.right-panel .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-top: 2rem;
+  width: 100%;
+  height: 3rem;
+  background: #FFCFF1;
+}
+
+.right-panel .header .path-icon {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 2rem;
+  background: url("../imgs/system/right-panel/header-top-bar/home-logo.svg");
+  background-size: cover;
+}
+
+.right-panel .header h1 {
+  display: block;
+  margin-left: 0.5rem;
+  margin-top: 0.75rem;
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #000000;
+}
+
+.right-panel .header h1:hover {
+  cursor: default;
+}
+
+.test {
+  position: fixed;
+  margin-left: 180rem;
+  margin-top: 70rem;
+  width: 10rem;
+  height: 10rem;
+  background: red;
+}
+
+@media (max-width: 575px) {
+  html {
+    font-size: 0.7em;
+  }
+}
+
 @media (min-width: 576px) {
   html {
     font-size: 0.2em;
@@ -246,13 +366,25 @@
 
 @media (min-width: 1200px) {
   html {
-    font-size: 1em;
+    font-size: 0.7em;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 0.8em;
+  }
+}
+
+@media (min-width: 2500px) {
+  html {
+    font-size: 0.8em;
   }
 }
 
 @media (min-width: 3800px) {
   html {
-    font-size: 2em;
+    font-size: 1em;
   }
 }
 
