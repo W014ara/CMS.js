@@ -28,47 +28,17 @@ export class CMS {
 
     _defaultColor = 'white';
     _defaultFont = '10px';
-    
-    initfield(){
+
+    initfield() {
         document.body.style.backgroundColor = this._defaultColor;
-        if(document.querySelector('.root') !== null)
+        if (document.querySelector('.root') !== null)
             console.log(`Notice: Main field already exists`);
-        else{
+        else {
             document.body.style.fontSize = this._defaultFont;
             const field = `<div class='root' id='root'></div>`
             document.body.insertAdjacentHTML("afterbegin", field);
         }
     }
-    
-    /**
-    * @method fieldSetup_background Сustomize field styles
-    * @param {color} :String - Sets the background color
-    * @return {void} returning main page's class
-    */
-
-    fieldSetup_background(color){
-        try{
-            document.body.style.backgroundColor = color;
-        }catch(e){
-            console.log(e);
-        }
-    }
-
-    /**
-    * @method fieldSetup_font Сustomize field styles
-    * @param {font} :String - Sets the page main font
-    * @return {void} returning main page's class
-    */
-
-    fieldSetup_font(font){
-        try{
-            const field = document.getElementById('root');
-            field.style.fontSize = font;
-        }catch(e){
-            console.log(e);
-        }
-    }
-
 
     /**
     * @method addLeftSection Add left section panel
@@ -82,10 +52,10 @@ export class CMS {
     _leftSection_defaultHeight = '100%';
     _leftSection_defaultColor = 'rgba(0, 0, 0, 0.7)';
 
-    addLeftSection(){
-        try{
+    addLeftSection() {
+        try {
             const field = document.getElementById('root');
-            if(document.querySelector('.leftPage') !== null) 
+            if (document.querySelector('.leftPage') !== null)
                 console.log(`Notice: Left section already exists`);
             else {
                 const leftSection = `<section class='leftPage' id='leftPage'>
@@ -118,20 +88,20 @@ export class CMS {
                 toggleClass(menu_title, burger);
                 toggleClass(menu_title, content);
                 hoverClass(menu_title, menu_title);
-                
-                menu_title.addEventListener('click', function(e){
+
+                menu_title.addEventListener('click', function (e) {
                     let contentHasActive = content.className.split(' ').includes('active');
-                    if(contentHasActive){
-                        if(content.childElementCount === null || content.childElementCount === undefined) 
+                    if (contentHasActive) {
+                        if (content.childElementCount === null || content.childElementCount === undefined)
                             content.style.height = '100%';
-                        else{
+                        else {
                             let newHeight = content.childElementCount * 112 + 'px';
                             content.style.height = newHeight;
                         }
-                    }else content.style.height = '100%';
+                    } else content.style.height = '100%';
                 })
             }
-        }catch(exception){
+        } catch (exception) {
             console.log(exception);
         }
     }
@@ -141,12 +111,12 @@ export class CMS {
      * @method addRightSection This method initializing right cms section for tables, log out btn and other
      * @returns{} Void
      */
-    addRightSection(){
+    addRightSection() {
         try {
             const root = document.querySelector('.root');
-            if(document.querySelector('.right-panel')) console.log('Error',
-                                                    'You already have right section');
-            else{
+            if (document.querySelector('.right-panel')) console.log('Error',
+                'You already have right section');
+            else {
                 const rightField = `<section class='right-panel' id='right-panel'>
                                         <div class='header' id='right-panel-header'>
                                             <div class='path-icon' id='path-icon'></div>
@@ -165,81 +135,6 @@ export class CMS {
     }
 
     /**
-    * @method user_SetBackground Change style for user Panel. Current - background
-    * @param {color}: String - Background Color
-    * @returns {void}
-    */
-
-    user_SetBackground(color){
-        try {
-            const userProfile = document.getElementById('user');   
-            userProfile.style.backgroundColor = color;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    /**
-    * @method user_SetImg Change style for user Panel. Current - User picture
-    * @param {path}: String - path to your IMG
-    * @returns {void}
-    */
-
-    user_SetImg(path){
-        try{
-            const userProfile = document.getElementById('user-photo');
-            userProfile.style.backgroundImage = `url(${path})`;
-        }catch(exception){
-            console.log(exception);
-        }
-    }
-
-    /**
-    * @method user_SetName Change style for user Panel. Current - User name
-    * @param {name}: String - user name
-    * @returns {void}
-    */
-
-    user_SetName(name){
-        try {
-            const userName = document.querySelector('.user-data').childNodes[1].childNodes[1];
-            userName.innerHTML = `Имя: ${name}`;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    /**
-    * @method user_SetRule Change style for user Panel. Current - User rule
-    * @param {rule}: String - user rule
-    * @returns {void}
-    */
-
-    user_SetRule(rule){
-        try {
-            const userRule = document.querySelector('.user-data').childNodes[1].childNodes[3];
-            userRule.innerHTML = `Должность: ${rule}`;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    /**
-    * @method user_SetMark Change style for user Panel. Current - User right corner mark
-    * @param {path}: String - path to your new mark
-    * @returns {void}
-    */
-
-    user_SetMark(path){
-        try {
-            const mark = document.getElementById('mark');
-            mark.style.backgroundImage = `url(${path})`;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    /**
     * @method addCategory This method adds new category into left panel
     * @param {img}: String - path to your category image
     * @param {title}: String - category's name
@@ -247,24 +142,28 @@ export class CMS {
     * @returns {void}
     */
 
-    addCategory(img, title, identifier){
+    addCategory(img, title, identifier) {
         try {
             const content = document.querySelector('.content');
             const new_block = `<div class='content-child' id='${identifier}' data-id='${identifier}'>
                                    <img src='${img}' class='content-logo'>
                                    <h1>${title}</h1>
                                    <div class='content-arrow'></div>
+                               </div>
+                               <div class='${identifier}-subcategory'>
                                </div>`
-                               
+
             content.insertAdjacentHTML('beforeend', new_block);
             const contentChild = document.getElementById(identifier);
+            const contentChild_subcategory = document.querySelector(`.${identifier}-subcategory`);
             toggleClass(contentChild, contentChild);
-            contentChild.addEventListener('click', function(e){
+            toggleClass(contentChild, contentChild_subcategory);
+            contentChild.addEventListener('click', function (e) {
                 try {
-                    for(let elem of this.className.split(' ')){
-                        if(elem === 'active'){
+                    for (let elem of this.className.split(' ')) {
+                        if (elem === 'active') {
                             document.querySelector('.right-panel').childNodes[1].childNodes[3].innerHTML = `Дом/${title}`;
-                        }else document.querySelector('.right-panel').childNodes[1].childNodes[3].innerHTML = `Дом/`;
+                        } else document.querySelector('.right-panel').childNodes[1].childNodes[3].innerHTML = `Дом/`;
                     }
                 } catch (error) {
                     console.log('Error', error);
@@ -280,8 +179,7 @@ export class CMS {
     * @param {identifier}: String - The unique identifier for your item.
     * @returns {void}
     */
-
-    removeCategory(identifier){
+    removeCategory(identifier) {
         try {
             document.getElementById(identifier).remove();
         } catch (error) {
@@ -289,37 +187,40 @@ export class CMS {
         }
     }
 
-    /**
-    * @method category_setImg This method sets new img for current category
-    * @param {identifier}: String - The unique identifier for your item.
-    * @param {img}: String - Img path
-    * @returns {void}
-    */
-
-    category_setImg(identifier, img){
-        try {
-            document.getElementById(identifier).childNodes[1].setAttribute('src', img);   
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
 
     /**
-    * @method category_setTitle This method sets new title for current category
-    * @param {identifier}: String - The unique identifier for your item.
-    * @param {title}: String - title text
+    * @method addSubCategory This method adds a product subcategory
+    * @param {parent_identifier}: String - parent element id (which parent category to insert into)
+    * @param {img}: String - path to your category image
+    * @param {title}: String - category's name
+    * @param {identifier}: String - The unique identifier for your subcategory item. Warning: don't create the same identifier
     * @returns {void}
     */
-
-    category_setTitle(identifier, title){
+    addSubCategory(parent_identifier, img, title, identifier){
         try {
-            document.getElementById(identifier).childNodes[3].innerHTML = title;
+            const parentEl = document.querySelector(`.${parent_identifier}-subcategory`);
+            const newEl= `<div class='child' id='${identifier}'>
+                                <img src='${img}' class='content-logo'>
+                                <h1>${title}</h1>
+                            </div>`
+            parentEl.insertAdjacentHTML('beforeend', newEl);
+            const createdEl = document.getElementById(identifier);
+            toggleClass(createdEl, createdEl);
+            
+            createdEl.addEventListener('click', function(e){
+                const rootEl = document.getElementById(parent_identifier);
+                document.querySelector('.right-panel').childNodes[1].childNodes[3].innerHTML = `Дом/${rootEl.childNodes[3].textContent}/${title}`;
+            })
         } catch (error) {
-            console.log(error);
+            console.log('Error', error);
         }
     }
 }
+
+
+
+
+
 
 //Toggle elem for click event
 /**
@@ -327,17 +228,17 @@ export class CMS {
  * @param {clickEl} Document Obj: Current click element 
  * @param {changeEL}  Document Obj: Current changable element
  */
-function toggleClass(clickEL, changeEL){
+function toggleClass(clickEL, changeEL) {
     let flag = false;
-    clickEL.addEventListener('click', function(e){
-        if(!flag){
+    clickEL.addEventListener('click', function (e) {
+        if (!flag) {
             changeEL.classList.add("active");
             flag = true;
         }
         else {
             changeEL.classList.remove("active");
             flag = false;
-        } 
+        }
     })
 }
 
@@ -347,12 +248,12 @@ function toggleClass(clickEL, changeEL){
  * @param {clickEl} Document Obj: Current click element 
  * @param {changeEL}  Document Obj: Current changable element
  */
-function hoverClass(hoverEL, changeEL){
-    hoverEL.addEventListener('mouseover', function(e){
+function hoverClass(hoverEL, changeEL) {
+    hoverEL.addEventListener('mouseover', function (e) {
         changeEL.classList.add("hover");
-     })
+    })
 
-    hoverEL.addEventListener('mouseout', function(e){
+    hoverEL.addEventListener('mouseout', function (e) {
         changeEL.classList.remove("hover");
     })
 }

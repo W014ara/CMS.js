@@ -269,6 +269,44 @@ body {
   color: rgba(131, 131, 131, 0.76);
 }
 
+.leftPage .content [class*=-subcategory] .child {
+  display: none;
+}
+
+.leftPage .content [class*=-subcategory].active .child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: inherit;
+  height: 6rem;
+  background: #62144A;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.leftPage .content [class*=-subcategory].active .child:hover {
+  cursor: pointer;
+  background: rgba(179, 10, 127, 0.7);
+}
+
+.leftPage .content [class*=-subcategory].active .child img {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 3rem;
+  margin-top: 1.5rem;
+}
+
+.leftPage .content [class*=-subcategory].active .child h1 {
+  margin-left: 1rem;
+  margin-top: 2rem;
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  color: #FFFFFF;
+}
+
 .right-panel {
   position: absolute;
   margin-left: 35rem;
@@ -277,11 +315,14 @@ body {
 }
 
 .right-panel .container {
+  position: absolute;
+  overflow-y: scroll;
   width: inherit;
   height: inherit;
 }
 
 .right-panel .container .container-background {
+  position: fixed;
   opacity: 30%;
   margin-left: 25%;
   margin-top: 20rem;
@@ -329,15 +370,6 @@ body {
 
 .right-panel .header h1:hover {
   cursor: default;
-}
-
-.test {
-  position: fixed;
-  margin-left: 180rem;
-  margin-top: 70rem;
-  width: 10rem;
-  height: 10rem;
-  background: red;
 }
 
 @media (max-width: 575px) {
