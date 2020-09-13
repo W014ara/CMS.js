@@ -88,9 +88,24 @@ export class CMS {
                 toggleClass(menu_title, burger);
                 toggleClass(menu_title, content);
                 hoverClass(menu_title, menu_title);
+                
 
                 menu_title.addEventListener('click', function (e) {
                     let contentHasActive = content.className.split(' ').includes('active');
+
+                    //Removing all active classes when introducing the 
+                    //burger button to its original position
+                    if(!burger.className.split(' ').includes('active')){
+                        document.querySelector('.right-panel').childNodes[1].childNodes[3].innerHTML = `Дом/`;
+                        for(let elem of DOMRegex(/content-child/)){
+                            elem.classList.remove('active')
+                        }
+                        for(let elem of DOMRegex(/\w+-subcategory/)){
+                            elem.classList.remove('active')
+                        }
+                    }   
+                    //Setting the height to the screen resolution in accordance with the number 
+                    //of internal columns when pressing the burger button
                     if (contentHasActive) {
                         if (content.childElementCount === null || content.childElementCount === undefined)
                             content.style.height = '100%';
@@ -256,4 +271,18 @@ function hoverClass(hoverEL, changeEL) {
     hoverEL.addEventListener('mouseout', function (e) {
         changeEL.classList.remove("hover");
     })
+}
+
+/**
+ * @function DOMRegex
+ * @param {regexm} :String/Regex - regular expressive for searching DOM elements
+ */
+function DOMRegex(regex) {
+    let output = [];
+    for (let elem of document.querySelectorAll('*')) {
+        if (regex.test(elem.classList)) { 
+            output.push(elem);
+        }
+    }
+    return output;
 }
